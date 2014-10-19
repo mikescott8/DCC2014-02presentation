@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Xamarin.Forms.Maps;
 
 namespace DCC
 {
@@ -34,6 +35,41 @@ namespace DCC
             return results.ToArray();
         }  
 
+        public static async Task<Pin[]> SearchByLocation(string searchLat, string serachLng)
+        {
+            var beerUrl = BuildUrl("search/geo/point");
+
+            beerUrl += ("lat=" + searchLat);
+            beerUrl += ("&lng=" + serachLng);
+
+
+            var json = await ExecuteCall(AppendKey(beerUrl));
+
+            var data = JsonConvert.DeserializeObject<BrewApiResults>(json);
+            var resultData = data.Data;
+
+            var results = new List<Pin>();
+
+            foreach (var res in resultData)
+            {
+                double lat;
+                double lng;
+            
+                if (double.TryParse((string) (res.SelectToken("latitude")), out lat) &&
+                    double.TryParse((string) (res.SelectToken("longitude")), out lng))
+                {
+                    results.Add(new Pin
+                    {
+                        Label = (string)res.SelectToken("brewery.name") + " (" + (string)res.SelectToken("name") + ")",
+                        Address = (string)res.SelectToken("streetAddress"),
+                        Position = new Position(lat, lng),
+                        Type = PinType.SearchResult,
+                    });
+                }
+            }
+
+            return results.ToArray();
+        }  
 
 
 

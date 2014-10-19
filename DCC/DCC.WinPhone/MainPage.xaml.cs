@@ -20,6 +20,8 @@ namespace DCC.WinPhone
             InitializeComponent();
 
             Forms.Init();
+            Xamarin.FormsMaps.Init();
+
             Content = DCC.App.GetMainPage().ConvertPageToUIElement(this);
         }
     }

@@ -23,7 +23,7 @@ namespace DCC
             _searchButton = new Button
             {
                 Text="Search",
-                Command = new Command(x => { OnSearch(x); })
+                Command = new Command(async x => { await OnSearch(x); })
             };
 
             _resultsListView = new ListView();

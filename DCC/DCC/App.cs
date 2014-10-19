@@ -55,7 +55,7 @@ namespace DCC
                     newPage = new ContentPage(); //TODO: replace with real page
                     break;
                 case "Location":
-                    newPage = new ContentPage(); //TODO: replace with real page
+                    newPage = ByLocationPage.GetPage(); //TODO: replace with real page
                     break;
                 default:
                     newPage = new ContentPage
