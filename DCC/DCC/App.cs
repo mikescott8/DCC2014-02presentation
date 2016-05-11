@@ -52,7 +52,7 @@ namespace DCC
                     newPage = ByBeerPage.GetPage();
                     break;
                 case "Brewery":
-                    newPage = new ByBreweryPage(); //TODO: replace with real page
+                    newPage = new ByBreweryPage();
                     break;
                 case "Location":
                     newPage = ByLocationPage.GetPage();

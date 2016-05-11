@@ -86,6 +86,44 @@ namespace DCC
             return results.ToArray();
         }  
 
+		public static async Task<string[]> SearchByBrewery(string searchText)
+		{
+			try {
+				var beerUrl = BuildUrl("search");
+
+				beerUrl += ("q=" + searchText);
+				beerUrl += ("&type=brewery");
+				beerUrl += ("&withBeers=Y");
+
+
+				var json = await ExecuteCall(AppendKey(beerUrl));
+
+				var data = JsonConvert.DeserializeObject<BrewApiResults>(json);
+				var resultData = data.Data;
+
+				var results = new List<string>();
+				if (resultData!=null) {
+					foreach (var res in resultData)
+					{
+						results.Add((string)res.SelectToken("name")); // + " (" + (string)(res.SelectToken("beers").Count().ToString()) + ")");
+					}
+				}
+				else {
+					results.Add("No results found.");
+				}
+
+				return results.ToArray();
+			} catch (Exception ex) {
+				var results = new List<string> ();
+
+				results.Add ("Unknown Error Occurred");
+				results.Add (ex.Message);
+				//results.Add (ex.StackTrace);
+
+				return results.ToArray ();
+			}
+		}  
+
 
 
         private const string baseEndpoint = "http://api.brewerydb.com/v2/";

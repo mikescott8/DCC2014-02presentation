@@ -22,7 +22,7 @@ namespace DCC
 
 		public async Task OnSearch(object prm)
 		{
-			var results = await Api.SearchByBeer (this.FindByName<Entry> ("_nameEntry").Text);
+			var results = await Api.SearchByBrewery (this.FindByName<Entry> ("_nameEntry").Text);
 			this.FindByName<ListView> ("_resultsListView").ItemsSource = results;
 		}
 	}
