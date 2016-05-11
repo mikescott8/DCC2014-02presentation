@@ -1,11 +1,9 @@
-﻿<Properties StartupItem="DCC/DCC.iOS/DCC.iOS.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.3" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DCC/DCC/Api.cs">
+﻿<Properties StartupItem="DCC/DCC.Android/DCC.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Mixed Platforms" PreferredExecutionTarget="Android.Nexus 7 (Marshmallow)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DCC/DCC.Android/obj/Debug/resourcecache/E3FC98B907D5DB540DBB18787EEC7B57/res/values/values.xml">
     <Files>
-      <File FileName="DCC/DCC/ApiKeys.cs" Line="1" Column="1" />
-      <File FileName="DCC/DCC/Api.cs" Line="34" Column="104" />
-      <File FileName="DCC/DCC.iOS/Main.cs" Line="1" Column="1" />
-      <File FileName="DCC/DCC/ByBeerPage.cs" Line="1" Column="1" />
+      <File FileName="DCC/DCC.Android/MainActivity.cs" Line="21" Column="1" />
+      <File FileName="DCC/DCC.Android/obj/Debug/resourcecache/E3FC98B907D5DB540DBB18787EEC7B57/res/values/values.xml" Line="131" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
