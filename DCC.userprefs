@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="DCC/DCC.Android/DCC.Android.csproj">
+﻿<Properties StartupItem="DCC/DCC.iOS/DCC.iOS.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|Mixed Platforms" PreferredExecutionTarget="Android.Nexus 7 (Marshmallow)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="DCC/DCC.Android/obj/Debug/resourcecache/E3FC98B907D5DB540DBB18787EEC7B57/res/values/values.xml">
     <Files>

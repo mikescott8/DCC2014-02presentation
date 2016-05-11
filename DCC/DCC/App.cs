@@ -49,13 +49,13 @@ namespace DCC
             switch (prm)
             {
                 case "Beer":
-                    newPage = ByBeerPage.GetPage(); //TODO: replace with real page
+                    newPage = ByBeerPage.GetPage();
                     break;
                 case "Brewery":
-                    newPage = new ContentPage(); //TODO: replace with real page
+                    newPage = new ByBreweryPage(); //TODO: replace with real page
                     break;
                 case "Location":
-                    newPage = ByLocationPage.GetPage(); //TODO: replace with real page
+                    newPage = ByLocationPage.GetPage();
                     break;
                 default:
                     newPage = new ContentPage
